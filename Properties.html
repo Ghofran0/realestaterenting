@@ -316,7 +316,9 @@ alert("إجابة صحيحة!");
                     emailjs.send("service_fby3rrq", "template_4spk206", {message_html: message})
                         .then(function(response) {
                             alert('Message sent successfully!');
-                        }
+                        }, function(error) {
+                            alert('Message failed to send. Please try again later.');
+                        });
                 });
             })();
         </script>
