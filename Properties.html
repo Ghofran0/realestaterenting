@@ -303,25 +303,24 @@ alert("إجابة صحيحة!");
         }
         </script>
         <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-        <script>
-            (function(){
-                emailjs.init("qktX0LHtic32_ROn_"); // Replace YOUR_USER_ID with your EmailJS user ID
-    
-                document.getElementById('Registration').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    
-                    var propertyDetails = document.getElementById('Registration').value;
-                    var message = "Details: " + propertyDetails;
-    
-                    emailjs.send("service_fby3rrq", "template_5c42yko", {message_html: message})
-                        .then(function(response) {
-                            alert('Message sent successfully!');
-                        }, function(error) {
-                            alert('Message failed to send. Please try again later.');
-                        });
-                });
-            })();
-        </script>
+         <script>
+     (function(){
+         emailjs.init("MxVYj3hlKusKZzrnZ0QJh");
+
+         document.getElementById('email-form').addEventListener('submit', function(event) {
+             event.preventDefault();
+
+             var data = document.getElementById('data').value;
+
+             emailjs.send("service_fby3rrq", "template_5c42yko", { data: data })
+                 .then(function(response) {
+                     alert("Email sent successfully!");
+                 }, function(error) {
+                     console.log("Email send failed:", error);
+                 });
+         });
+     })();
+ </script>
         <script>
             function validateForm() {
                 let email = document.getElementById('email').value;
