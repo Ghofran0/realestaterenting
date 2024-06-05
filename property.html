@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Properties</title>
+</head>
+<body>
+<script>
+function showInfo(info) {
+  var infoDiv = document.getElementById("info");
+  infoDiv.innerHTML = info;
+  infoDiv.style.display = "block";
+}
+
+function hideInfo() {
+  var infoDiv = document.getElementById("info");
+  infoDiv.style.display = "none";
+}
+</script>
+<table>
+<tr>
+<th>اختبار</th>
+<th>اظهار التفاصيل</th>
+<th>الايجار الشهري</th>
+<th>التفاصيل</th>
+<th>المدينة</th>
+</tr>
+<tr>
+<td>Data 3</td>
+<td><button class="button" onclick="showInfo('شسيبسيرة')"></button>
+
+<div id="info" class="info" style="display: none;">
+</div></td>
+<td>500000ل.س</td>
+<td>شقة غرفة وصالة مساحة 70م</td>
+<td>دمشق</td>
+</tr>
+<tr>
+<td>Data 3</td>
+<td><button class="button" onclick="showInfo('dfhadllad')"></button>
+
+<div id="info" class="info" style="display: none;">
+</div></td>
+<td>250000 ل.س</td>
+<td>دكان مساحة 50 م</td>
+<td>حمص</td>
+</tr>
+<tr>
+<td>Data 3</td>
+<td><button class="button" onclick="showInfo('شقة فارغة غرفتين وصالة 110 م ')"></button>
+
+<div id="info" class="info" style="display: none;">
+</div></td>
+<td> 600000ل.س </td>
+<td>شقة فارغة غرفتين وصالة 110 م </td>
+<td>دمشق</td>
+</tr>
+<!-- Add more rows with similar structure -->
+</table>
+</body>
+</html>

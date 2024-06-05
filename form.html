@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+     body{
+    font-family: sans-serif;
+    background: url(UAE\ -\ Dubai\ Icons\ Photo\ Tour.jfif);
+    background-size: cover;
+}
+    form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 420px;
+    background: rgba(0,0,0,.5);
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+    h2{
+        color: #fff;
+        text-align: center;
+        margin-top: 50px;
+    }
+    input[type="text"],[type="number"],[type="email"]{
+        position: absolute;
+        outline: none;
+        border: none;
+        width: 250px;
+        height: 35px;
+        border-bottom: 2px solid #0094ff;
+        background: none;
+        padding: 5px;
+        color: #fff;
+    }
+    input[type="text"]{
+        top: 140px;
+        left: 50px;
+    }
+    [type="number"]{
+        top: 180px;
+        left: 50px;
+    }
+    [type="date"]{
+        top: 220px;
+        left: 50px;
+    }
+    [type="email"]{
+        top: 260px;
+        left: 50px;
+    }
+    </style>
+</head>
+<div class="form">
+<body> 
+    <form>
+    <h2>المعلومات</h2>
+    <input type="text" name="name" id="name" placeholder="الاسم الكامل" maxlength="25">
+    <br>
+    <input type="number" id="long-number" name="long-number" maxlength="11">
+    <br>
+    <input type="date" id="birthdate" name="birthdate" pattern="\d{2}-\d{2}-\d{4}" placeholder="تاريخ الولادة" required>
+    <br>
+    <input type="email" name="email" id="email" placeholder="البريد الالكتروني" required>
+</body>
+</div>
+</html>

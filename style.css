@@ -1,0 +1,105 @@
+html {
+    color: white;
+}
+html span{
+    color:rgb(31, 216, 223);
+}
+html .ourcompany h1{
+    font-size: 50px;
+    color: rgb(31, 216, 223);
+}
+html .contactus h1{
+    font-size: 55px;
+    color: rgb(107, 132, 218);
+}
+h3{
+    color: rgb(235, 219, 227);
+}
+.purpose{
+    color: rgb(107, 132, 218);
+}
+.social img{
+        margin-left: 50px;
+}
+.social img:hover{
+    transition: transform 0.4s;
+    transform: scale(1.3);
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+.aboutpic img{
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+}
+.button {
+    background-color: #ffffff;
+    border: none;
+    color: white;
+    padding: 7px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.info {
+    display: none;
+    padding: 10px;
+    background-color: #000000;
+}
+.block{
+    font-size: 25px;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    text-align: center;
+    margin-left: 1222px;
+}
+.bh a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.822);
+    margin-left: 250px;
+    transition: color 0.4s;
+}
+  .bh a:hover {
+    color: rgba(0, 225, 255, 0.637);
+    font-size: 15px;  
+}
+a input[type=submit]{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 155px;
+    margin-top: 115px;
+    font-style: bold;
+}
+  .props img{
+    margin-left: 20px;
+  }
+#toggle-form{
+    margin-left: 1235px;
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+  }
+.num input{
+    margin-top: 152px;
+    position: absolute;
+          outline: none;
+          border: none;
+          width: 250px;
+          height: 35px;
+          border-bottom: 2px solid #808080;
+          background: none;
+          padding: 5px;
+          color: #fff;
+}
