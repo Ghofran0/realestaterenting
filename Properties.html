@@ -278,6 +278,23 @@
             <div class="num"><input type="text" placeholder="الرقم" id="idNumber" minlength=10 maxlength="10"></div>
               <b><input type="submit" value="ارسال"></b>
         </form> 
+            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <script>
+    (function(){
+        emailjs.init('MxVYj3hlKusKZzrnZ0QJh'); // replace 'user_youruserid' with your actual EmailJS user ID
+
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_qki6fiv', 'template_5c42yko', this)
+                .then(function(response) {
+                    alert('Email sent successfully!');
+                }, function(error) {
+                    alert('Error sending email: ' + error);
+                });
+        });
+    })();
+</script>
                  <script>
 function generateRandomNumbers() {
     // طلب من المستخدم إدخال ناتج جمع الرقمين
@@ -301,23 +318,7 @@ window.onload = function() {
 };
 </script>
                          
-        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-  <script>
-    (function(){
-        emailjs.init('MxVYj3hlKusKZzrnZ0QJh'); // replace 'user_youruserid' with your actual EmailJS user ID
-
-        document.getElementById('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            emailjs.sendForm('service_qki6fiv', 'template_5c42yko', this)
-                .then(function(response) {
-                    alert('Email sent successfully!');
-                }, function(error) {
-                    alert('Error sending email: ' + error);
-                });
-        });
-    })();
-</script>
         <script>
             function validateForm() {
                 let email = document.getElementById('email').value;
