@@ -273,9 +273,9 @@
     
             <input type="date" placeholder="تاريخ الولادة" id="birthdate" max="2009-12-31"><br><br>
     
-            <div class="id"><input type="text" placeholder="الرقم الوطني" id="idNumber" maxlength="11" required><br><br></div>
+            <div class="id"><input type="text" placeholder="الرقم الوطني" id="idNumber" minlength=11 maxlength="11" required><br><br></div>
             <input type="email" placeholder="البريدالالكتروني" id="email"><br><br>
-            <div class="num"><input type="text" placeholder="الرقم" id="idNumber" maxlength="8" required></div>
+            <div class="num"><input type="text" placeholder="الرقم" id="idNumber" minlength=10 maxlength="10"></div>
         </form> 
                     <script>
 // طلب من المستخدم إدخال ناتج جمع الرقمين
@@ -296,28 +296,28 @@ alert("إجابة صحيحة!");
                          <a href=""><input type="submit" value="ارسال"></a>
         <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-         <script>
-        function toggleForm() {
-          var Registration = document.querySelector('Registration');
-          Registration.style.display = Registration.style.display === 'none' ? 'block' : 'none';
-        }
-        </script>
-         <script>
-     (function(){
-         emailjs.init("MxVYj3hlKusKZzrnZ0QJh");
+       <script>
+    (function(){
+        emailjs.init("MxVYj3hlKusKZzrnZ0QJh");
 
-         document.getElementById('Registration').addEventListener('submit', function(event) {
-             event.preventDefault();
+        document.getElementById('Registration').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-             var form = document.getElementById('form').value;
+            var formData = new FormData(document.getElementById('Registration'));
+            var data = {};
+            formData.forEach(function(value, key){
+                data[key] = value;
+            });
 
-             emailjs.send("service_qki6fiv", "template_5c42yko", { data: data })
-                 .then(function(response) {
-                     alert("Email sent successfully!");
-                 }, function(error) {
-                     console.log("Email send failed:", error);
-                 });
-         });
+            emailjs.send("service_qki6fiv", "template_5c42yko", { data: data })
+                .then(function(response) {
+                    alert("Email sent successfully!");
+                }, function(error) {
+                    console.log("Email send failed:", error);
+                });
+        });
+    })();
+</script> 
      })();
  </script>
         <script>
