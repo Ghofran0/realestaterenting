@@ -298,11 +298,13 @@
     <div class="id"><input type="text" placeholder="الرقم الوطني" id="idNumber" minlength="11" maxlength="11" required><br><br></div>
     <input type="email" placeholder="البريدالالكتروني" id="email"><br><br>
     <div class="num"><input type="text" placeholder="الرقم" id="idNumber" minlength="10" maxlength="10"></div>
-    <b><input type="submit" value="ارسال"></b>
+    <b><input type="submit" value="ارسال" onclick=sendemail()></b>
       <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</form>
+</section>
 
-<script>
-  (function() {
+            
+  function sendemail() {
     emailjs.init('qktX0LHtic32_ROn_'); // replace 'user_youruserid' with your actual EmailJS user ID
 
     document.getElementById('form').addEventListener('submit', function(event) {
@@ -315,9 +317,9 @@
         });
     });
   })();
-</script>
-  </section>
-</form>
+
+  
+
 
 
 
@@ -337,7 +339,7 @@
             }
         </script>
                 
-        </form>
+       
         
        
 </body>
