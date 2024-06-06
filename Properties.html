@@ -267,36 +267,37 @@
             });
         </script> 
         <form id="Registration" class="contact__form">
-          <section id="form">
-            <h2>المعلومات</h2>
-            <input type="text" placeholder="الاسم الكامل" id="fullName"><br><br>
-    
-            <input type="date" placeholder="تاريخ الولادة" id="birthdate" max="2009-12-31"><br><br>
-    
-            <div class="id"><input type="text" placeholder="الرقم الوطني" id="idNumber" minlength=11 maxlength="11" required><br><br></div>
-            <input type="email" placeholder="البريدالالكتروني" id="email"><br><br>
-            <div class="num"><input type="text" placeholder="الرقم" id="idNumber" minlength=10 maxlength="10"></div>
-              <b><input type="submit" value="ارسال"></b>
-        </form> 
-            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <section id="form">
+    <h2>المعلومات</h2>
+    <input type="text" placeholder="الاسم الكامل" id="fullName"><br><br>
 
-  <script>
-    (function(){
-        emailjs.init('MxVYj3hlKusKZzrnZ0QJh'); // replace 'user_youruserid' with your actual EmailJS user ID
+    <input type="date" placeholder="تاريخ الولادة" id="birthdate" max="2009-12-31"><br><br>
 
-        document.getElementById('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            emailjs.sendForm('service_qki6fiv', 'template_5c42yko', this)
-                .then(function(response) {
-                    alert('Email sent successfully!');
-                }, function(error) {
-                    alert('Error sending email: ' + error);
-                });
+    <div class="id"><input type="text" placeholder="الرقم الوطني" id="idNumber" minlength="11" maxlength="11" required><br><br></div>
+    <input type="email" placeholder="البريدالالكتروني" id="email"><br><br>
+    <div class="num"><input type="text" placeholder="الرقم" id="idNumber" minlength="10" maxlength="10"></div>
+    <b><input type="submit" value="ارسال"></b>
+  </section>
+</form>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+  (function() {
+    emailjs.init('MxVYj3hlKusKZzrnZ0QJh'); // replace 'user_youruserid' with your actual EmailJS user ID
+
+    document.getElementById('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      emailjs.sendForm('service_qki6fiv', 'template_5c42yko', this)
+        .then(function(response) {
+          alert('Email sent successfully!');
+        }, function(error) {
+          alert('Error sending email: ' + error);
         });
-    })();
+    });
+  })();
 </script>
-                 <script>
-function generateRandomNumbers() {
+<script>
+  function generateRandomNumbers() {
     // طلب من المستخدم إدخال ناتج جمع الرقمين
     const num1 = Math.floor(Math.random() * 20) + 1;
     const num2 = Math.floor(Math.random() * 20) + 1;
@@ -305,18 +306,19 @@ function generateRandomNumbers() {
     let userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
 
     while (parseInt(userInput) !== sum) {
-        alert(`الإجابة خاطئة.`);
-        userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
+      alert(`الإجابة خاطئة.`);
+      userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
     }
 
     alert("إجابة صحيحة!");
-}
+  }
 
-// Call the function when the page is loaded
-window.onload = function() {
+  // Call the function when the page is loaded
+  window.onload = function() {
     generateRandomNumbers();
-};
+  };
 </script>
+
                          
 
         <script>
