@@ -301,7 +301,7 @@ alert("إجابة صحيحة!");
     (function(){
         emailjs.init('MxVYj3hlKusKZzrnZ0QJh'); // replace 'user_youruserid' with your actual EmailJS user ID
 
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
+        document.getElementById('form').addEventListener('submit', function(event) {
             event.preventDefault();
             emailjs.sendForm('service_qki6fiv', 'template_5c42yko', this)
                 .then(function(response) {
