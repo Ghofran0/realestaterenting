@@ -294,6 +294,7 @@ alert("إجابة صحيحة!");
 
         </script>
                          <a href=""><input type="submit" value="ارسال"></a>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
          <script>
         function toggleForm() {
@@ -301,7 +302,6 @@ alert("إجابة صحيحة!");
           Registration.style.display = Registration.style.display === 'none' ? 'block' : 'none';
         }
         </script>
-        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
          <script>
      (function(){
          emailjs.init("MxVYj3hlKusKZzrnZ0QJh");
@@ -309,7 +309,7 @@ alert("إجابة صحيحة!");
          document.getElementById('Registration').addEventListener('submit', function(event) {
              event.preventDefault();
 
-             var data = document.getElementById('data').value;
+             var form = document.getElementById('form').value;
 
              emailjs.send("service_qki6fiv", "template_5c42yko", { data: data })
                  .then(function(response) {
