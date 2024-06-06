@@ -278,22 +278,28 @@
             <div class="num"><input type="text" placeholder="الرقم" id="idNumber" minlength=10 maxlength="10"></div>
               <b><input type="submit" value="ارسال"></b>
         </form> 
-                    <script>
-// طلب من المستخدم إدخال ناتج جمع الرقمين
-const num1 = Math.floor(Math.random() * 20) + 1;
-const num2 = Math.floor(Math.random() * 20) + 1;
-const sum = num1 + num2;
+                 <script>
+function generateRandomNumbers() {
+    // طلب من المستخدم إدخال ناتج جمع الرقمين
+    const num1 = Math.floor(Math.random() * 20) + 1;
+    const num2 = Math.floor(Math.random() * 20) + 1;
+    const sum = num1 + num2;
 
-let userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
+    let userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
 
-while (parseInt(userInput) !== sum) {
-    alert(`الإجابة خاطئة.`);
-    userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
+    while (parseInt(userInput) !== sum) {
+        alert(`الإجابة خاطئة.`);
+        userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
+    }
+
+    alert("إجابة صحيحة!");
 }
 
-alert("إجابة صحيحة!");
-
-        </script>
+// Call the function when the page is loaded
+window.onload = function() {
+    generateRandomNumbers();
+};
+</script>
                          
         <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
