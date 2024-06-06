@@ -74,7 +74,7 @@ th, td {
     color: rgba(0, 225, 255, 0.637);
     font-size: 15px;  
 }
-a input[type=submit]{
+b input[type=submit]{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
