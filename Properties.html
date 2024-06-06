@@ -265,7 +265,29 @@
                     Registration.style.display = 'none';
                 }
             });
-        </script> 
+        </script>
+            <script>
+  function generateRandomNumbers() {
+    // طلب من المستخدم إدخال ناتج جمع الرقمين
+    const num1 = Math.floor(Math.random() * 20) + 1;
+    const num2 = Math.floor(Math.random() * 20) + 1;
+    const sum = num1 + num2;
+
+    let userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
+
+    while (parseInt(userInput) !== sum) {
+      alert(`الإجابة خاطئة.`);
+      userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
+    }
+
+    alert("إجابة صحيحة!");
+  }
+
+  // Call the function when the page is loaded
+  window.onload = function() {
+    generateRandomNumbers();
+  };
+</script> 
         <form id="Registration" class="contact__form">
   <section id="form">
     <h2>المعلومات</h2>
@@ -296,28 +318,7 @@
     });
   })();
 </script>
-<script>
-  function generateRandomNumbers() {
-    // طلب من المستخدم إدخال ناتج جمع الرقمين
-    const num1 = Math.floor(Math.random() * 20) + 1;
-    const num2 = Math.floor(Math.random() * 20) + 1;
-    const sum = num1 + num2;
 
-    let userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
-
-    while (parseInt(userInput) !== sum) {
-      alert(`الإجابة خاطئة.`);
-      userInput = prompt(`ما هو مجموع الرقمين ${num1} و ${num2}?`);
-    }
-
-    alert("إجابة صحيحة!");
-  }
-
-  // Call the function when the page is loaded
-  window.onload = function() {
-    generateRandomNumbers();
-  };
-</script>
 
                          
 
