@@ -297,28 +297,21 @@ alert("إجابة صحيحة!");
                          
         <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-       <script>
+  <script>
     (function(){
-        emailjs.init("MxVYj3hlKusKZzrnZ0QJh");
+        emailjs.init('MxVYj3hlKusKZzrnZ0QJh'); // replace 'user_youruserid' with your actual EmailJS user ID
 
-        document.getElementById('form').addEventListener('submit', function(event) {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-
-            var formData = new FormData(document.getElementById('form'));
-            var data = {};
-            formData.forEach(function(value, key){
-                data[key] = value;
-            });
-
-            emailjs.send("service_qki6fiv", "template_5c42yko", { data: data })
+            emailjs.sendForm('service_qki6fiv', 'template_5c42yko', this)
                 .then(function(response) {
-                    alert("Email sent successfully!");
+                    alert('Email sent successfully!');
                 }, function(error) {
-                    console.log("Email send failed:", error);
+                    alert('Error sending email: ' + error);
                 });
         });
     })();
- </script>
+</script>
         <script>
             function validateForm() {
                 let email = document.getElementById('email').value;
