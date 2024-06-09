@@ -306,8 +306,8 @@
      <script>
 function sendemail(event) {
   event.preventDefault(); // منع إعادة تحميل الصفحة
-EmailJS.init('qktX0LHtic32_ROn_');
-  emailjs.sendForm('service_qki6fiv', 'template_5c42yko', 'qktX0LHtic32_ROn_')
+  emailJS.init('qktX0LHtic32_ROn_','service_qki6fiv', 'template_5c42yko');
+  emailjs.sendForm('#Registration')
     .then(function(response) {
       alert('Email sent successfully!');
     }, function(error) {
