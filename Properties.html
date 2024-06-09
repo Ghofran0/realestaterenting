@@ -303,7 +303,7 @@
 </form>
 </section>
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-             <script>
+     <script>
  function sendemail() {
   emailjs.sendForm('service_qki6fiv', 'template_5c42yko', '#Registration')
     .then(function(response) {
@@ -311,9 +311,10 @@
     }, function(error) {
       alert('Error sending email: ' + error.text);
     });
-}
 
-                 
+  return false; // منع تحميل الصفحة
+}
+</script>        
              </script>
                 
 
