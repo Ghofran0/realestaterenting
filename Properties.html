@@ -284,7 +284,7 @@
   }
 
   // Call the function when the page is loaded
-  submit.pressed = function() {
+  window.onload = function() {
     generateRandomNumbers();
   };
 </script> 
@@ -299,10 +299,10 @@
     <input type="email" placeholder="البريدالالكتروني" id="email"><br><br>
     <div class="num"><input type="text" placeholder="الرقم" id="idNumber" minlength="10" maxlength="10"></div>
     <b><input type="submit" value="ارسال" onclick="sendemail();"></b>
-      <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+      
 </form>
 </section>
-
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
              <script>
  function sendemail() {
   emailjs.sendForm('service_qki6fiv', 'template_5c42yko', '#Registration')
