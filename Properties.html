@@ -305,12 +305,17 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
      <script>
 emailjs.init('qktX0LHtic32_ROn_');
-emailjs.send('service_qki6fiv', 'template_5c42yko', {#Registeration})
-.then(function(response) {
-  alert('Email sent successfully!');
-}, function(error) {
-  alert('Error sending email: ' + error.text);
-});
+    
+    function sendemail(event) {
+        event.preventDefault();
+        
+        emailjs.send('service_qki6fiv', 'template_5c42yko')
+            .then(function(response) {
+                alert('Email sent successfully!');
+            }, function(error) {
+                console.log('Error: ', error);
+            });
+    }
 
 </script>        
              </script>
