@@ -288,62 +288,77 @@
     generateRandomNumbers();
   };
 </script> 
-        <form id="Registration" class="contact__form">
-  <section id="form">
-    <h2>المعلومات</h2>
-    <input type="text" placeholder="الاسم الكامل" id="fullName"><br><br>
+<form id="Registration" class="contact__form">
+    <section id="form">
+      <h2>المعلومات</h2>
+      <input type="text" placeholder="الاسم الكامل" id="fullName"><br><br>
+  
+      <input type="date" placeholder="تاريخ الولادة" id="birthdate" max="2009-12-31"><br><br>
+  
+      <div class="id"><input type="text" placeholder="الرقم الوطني" id="idNumber" minlength="11" maxlength="11" required><br><br></div>
+      <input type="email" placeholder="البريدالالكتروني" id="email"><br><br>
+      <div class="num"><input type="text" id="userInput" placeholder="الرقم" minlength="8" maxlength="8"></div>
+      <b><input type="submit" value="ارسال" onclick="submitForm()"></b>
+    </section>
+  </form> 
 
-    <input type="date" placeholder="تاريخ الولادة" id="birthdate" max="2009-12-31"><br><br>
 
-    <div class="id"><input type="text" placeholder="الرقم الوطني" id="idNumber" minlength="11" maxlength="11" required><br><br></div>
-    <input type="email" placeholder="البريدالالكتروني" id="email"><br><br>
-    <div class="num"><input type="text" placeholder="الرقم" id="idNumber" minlength="10" maxlength="10"></div>
-    <b><input type="submit" value="ارسال" onclick="sendemail(event);"></b>
-      
-</form>
-</section>
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-     <script>
-emailjs.init('qktX0LHtic32_ROn_');
-    
-    function sendemail(event) {
-        event.preventDefault();
-        
-        emailjs.send('service_qki6fiv', 'template_5c42yko')
+<script>
+    function filterNumber() {
+        var idNumber = document.getElementById("idNumber").value;
+        var userInput = document.getElementById("userInput").value;
+
+        if (userInput === "") {
+            sendemail(idNumber);
+        } else {
+            var firstNumber = userInput.charAt(0);
+
+            if (firstNumber == '3' || firstNumber == '4' || firstNumber == '5' || firstNumber == '6' || firstNumber == '8' || firstNumber == '9') {
+                sendemail(idNumber);
+            } else {
+                alert("The first digit of the number is incorrect. Please enter a number starting with 3, 4, 5, 6, 8, or 9");
+            }
+        }
+    }
+
+    function submitForm() {
+        if (validateForm()) {
+            filterNumber();
+        }
+    }
+
+    function validateForm() {
+        var idNumber = document.getElementById("idNumber").value;
+        if (idNumber === "") {
+            alert("Please fill in all the required fields.");
+            return false;
+        }
+        return true;
+    }
+
+    document.getElementById('Registration').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        submitForm();
+    });
+
+    function sendemail(idNumber) {
+        emailjs.init('qktX0LHtic32_ROn_');
+        emailjs.send('service_qki6fiv', 'template_5c42yko', { idNumber: idNumber })
             .then(function(response) {
                 alert('Email sent successfully!');
             }, function(error) {
                 console.log('Error: ', error);
             });
     }
+    document.getElementById('Registration').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    submitForm();
+});
 
-</script>        
-             </script>
-                
+</script>
+
 
   
-
-
-
-
-                         
-
-        <script>
-            function validateForm() {
-                let email = document.getElementById('email').value;
-                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-                if (!email.match(emailPattern)) {
-                    alert('Please enter a valid email address.');
-                    return false;
-                }
-    
-                return true;
-            }
-        </script>
-                
-       
-        
-       
 </body>
 </html>
